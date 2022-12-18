@@ -4,3 +4,21 @@
 The input is a double newline separated list of newline separated
 lists of numbers.  The desire is to get the maximum of the sum of a
 sub-list.
+
+[[file:input][Input]] file.
+
+#+BEGIN_SRC lisp
+  (defun day1 (input-file)
+    (with-open-file (input input-file)
+      (let ((input-list
+             (split-sequence:split-sequence
+              nil
+              (loop for line = (read-line input nil nil)
+                 while line
+                 if (string= line "")
+                 collect nil
+                 else
+                 collect (parse-integer line)))))
+        (reduce #'max (map 'list (lambda (l) (reduce #'+ l)) input-list)))))
+  (day1 "input")
+#+END_SRC
