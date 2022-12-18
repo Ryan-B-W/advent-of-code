@@ -22,3 +22,23 @@ sub-list.
         (reduce #'max (map 'list (lambda (l) (reduce #'+ l)) input-list)))))
   (day1 "input")
 #+END_SRC
+
+* Part 2
+
+The desire is to get the total of the top 3 sums from part 1.  Input is the same.
+
+#+BEGIN_SRC lisp
+  (defun day1part2 (input-file)
+    (with-open-file (input input-file)
+      (let ((input-list
+             (split-sequence:split-sequence
+              nil
+              (loop for line = (read-line input nil nil)
+                 while line
+                 if (string= line "")
+                 collect nil
+                 else
+                 collect (parse-integer line)))))
+        (apply #'+ (subseq (sort (map 'list (lambda (l) (reduce #'+ l)) input-list) #'>) 0 3)))))
+  (day1part2 "input")
+#+END_SRC
