@@ -2,7 +2,7 @@
 
 (defun day1-get-input-list (input-file)
   (with-open-file (input input-file)
-    (split-sequence:split-sequence
+    (split-sequence
      nil
      (loop for line = (read-line input nil nil)
            while line
