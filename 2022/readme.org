@@ -1,9 +1,18 @@
 * Prerequisites
 Ensure both that [[https://www.quicklisp.org/][quicklisp]] is loaded and this directory containing
-[[file:aoc-2022.asd][aoc-2022.asd]] is in src_lisp[:exports code]{ql:*local-project-directories*}.
+[[file:aoc-2022.asd][aoc-2022.asd]] is in
+#+BEGIN_SRC lisp
+  ql:*local-project-directories*
+#+END_SRC
+
 * Running
 To run a solution for a given day load this project in the Common Lisp
-repl with src_lisp[:exports code]{(ql:quickload "aoc-2022")} and then
-use the runner for the desired day.  For example,
-src_lisp[:exports code]{(aoc-2022:runner 1 2)} to run the solution for
-day 1 part 2.
+repl with
+#+BEGIN_SRC lisp
+  (ql:quickload "aoc-2022")
+#+END_SRC
+and then use the runner for the desired day.  For example,
+#+BEGIN_SRC lisp
+  (aoc-2022:runner 1 2)
+#+END_SRC
+to run the solution for day 1 part 2.
