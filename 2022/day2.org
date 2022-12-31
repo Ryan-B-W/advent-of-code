@@ -74,5 +74,5 @@ Table simplified (ties condensed):
         sum (round-score (normalize-move opponent) (normalize-move response))
         while (peek-char nil input nil nil))))
 
-  (total-score "input")
+  (total-score "inputs/day2")
 #+END_SRC

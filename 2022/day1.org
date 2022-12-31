@@ -5,7 +5,7 @@ The input is a double newline separated list of newline separated
 lists of numbers.  The desire is to get the maximum of the sum of a
 sub-list.
 
-[[file:input][Input]] file.
+[[file:inputs/day1][Input]] file.
 
 #+BEGIN_SRC lisp
   (defun day1 (input-file)
@@ -20,7 +20,7 @@ sub-list.
                  else
                  collect (parse-integer line)))))
         (reduce #'max (map 'list (lambda (l) (reduce #'+ l)) input-list)))))
-  (day1 "input")
+  (day1 "inputs/day1")
 #+END_SRC
 
 * Part 2
@@ -40,5 +40,5 @@ The desire is to get the total of the top 3 sums from part 1.  Input is the same
                  else
                  collect (parse-integer line)))))
         (apply #'+ (subseq (sort (map 'list (lambda (l) (reduce #'+ l)) input-list) #'>) 0 3)))))
-  (day1part2 "input")
+  (day1part2 "inputs/day1")
 #+END_SRC
