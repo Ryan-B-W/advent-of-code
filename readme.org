@@ -1,1 +1,1 @@
-Personal attempts at AoC 2022.
+Personal attempts at AoC.
