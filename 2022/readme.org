@@ -1,0 +1,8 @@
+* Prerequisites
+Ensure both that [[https://www.quicklisp.org/][quicklisp]] is loaded and this directory containing
+[[file:aoc-2022.asd][aoc-2022.asd]] is in src_lisp{ql:*local-project-directories*}.
+* Running
+To run a solution for a given day load this project in the Common Lisp
+repl with src_lisp{(ql:quickload "aoc-2022")} and then use the runner
+for the desired day.  For example, src_lisp{(aoc-2022:runner 1 2)} to
+run the solution for day 1 part 2.
